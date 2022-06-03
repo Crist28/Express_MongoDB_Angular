@@ -1,0 +1,43 @@
+<div class="col-lg-10" [@fadeLateral]>
+    <h3>{{title}}</h3>
+
+<form #formAdd="ngForm" (ngSubmit)="onSubmit()">
+    <p>
+        <label>Nombre</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="phone.name" class="form-control" required/>
+        <span *ngIf="!name.value && name.touched">
+            El nombre es obligatorio
+        </span>
+    </p>
+    <p>
+        <label>Descripcion</label>
+        <textarea class="form-control"   name="description" #description="ngModel" [(ngModel)]="phone.description" required></textarea>
+        <span *ngIf="!description.value && description.touched">
+            La descripcion es necesaria obligatorio
+        </span>
+    </p>
+    <div class="mb-3">
+        <label class="form-label">Año</label>
+        <input type="text" name="year" #year="ngModel" [(ngModel)]="phone.year" 
+        class="form-control" required/>  
+        <span *ngIf="!year.valid && year.touched">
+          La Año Es Obligatorio
+        </span>    
+    </div>
+
+    <div *ngIf=" phone.image">
+        <div class="image_for_edit">
+          <img src="{{url + 'get-image-phone/' + phone.image}}" />
+        </div>
+      </div>
+
+    <P>
+        <label>Subir la foto del telefono</label>
+        <input type="file" placeholder="Subir imagen..." (change)="fileChangeEvent($event)">
+    </P>
+
+
+    <button type="submit" class="btn btn-outline-primary">{{title}}</button>
+    
+</form>
+</div>

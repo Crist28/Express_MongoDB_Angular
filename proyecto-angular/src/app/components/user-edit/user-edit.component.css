@@ -1,0 +1,12 @@
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 35%;
+}
+
+.input_txt{
+width: 400px;
+height: 38px;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+}

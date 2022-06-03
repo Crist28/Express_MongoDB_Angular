@@ -1,0 +1,17 @@
+<div class="wrapper" [@fundido]>
+    <h1>Listado De Administradores</h1>
+    <div class="gallery" *ngFor="let employees of empleados">
+      <ul>
+        <li><img src="{{ url +'get-image-file/' +employees.image }}"
+          alt="{{employees.name}}" *ngIf="employees.image"/></li>
+  
+          <img  src="http://via.placeholder.com/270x200" alt="{{employees.name}}"
+          *ngIf="!employees.image">                                    
+          <br><br><br>
+          <h3><a>{{employees.name +' '+ employees.surname +': '+ employees.email}}</a></h3>
+      </ul>
+    </div>
+    <p class="attribution">Estos Son Los Administradores Que Estan Encargados  
+      <a href="**">@iphone</a> 
+    </p>
+  </div>

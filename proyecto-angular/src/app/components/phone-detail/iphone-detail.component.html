@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="phone-box col-lg-11" *ngIf="phone">
+        <div id="phone-head-card" class="col-lg-4 pull-left">
+            <img src="{{url + 'get-image-phone/' +phone.image}}" style="width:300px"/>
+        </div>
+        <div class="phone-data col-lg-7 pull-left">
+            <h1>{{phone.name}}</h1>            
+            <p>{{phone.user}}</p>                
+            <p>{{phone.year}}</p>
+            <p>{{phone.description}}</p>
+        </div>
+    </div>
+</div>

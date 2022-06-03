@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="d-flex page-content">
+    <div class="center-content">
+      <form #userEditForm="ngForm" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+        <h3 class="position-relative">{{title}}</h3>
+        <div class="alert alert-success" *ngIf="status == 'success'">
+            Has actualizado tu informacion
+        </div>
+        <div class="alert alert-danger" *ngIf="status == 'error'">
+            No has actualizado tus datos
+        </div>
+        <input type="text" class="input_txt" placeholder="Ingrese el nombre" style="width:200px" name="name" #name="ngModel" [(ngModel)]="user.name" required>
+        <input type="text" class="input_txt" placeholder="Ingrese el apellido" style="width:200px" name="surname" #surname="ngModel" [(ngModel)]="user.surname" required>
+        <input type="text" class="input_txt" placeholder="Ingrese el correo" name="email"  #email="ngModel" [(ngModel)]="user.email" required>
+        <div class="image_for_edit" *ngIf="user.image && user.image != 'null'">
+          <img src="{{url + 'get-image-file/'+ user.image}}" style="width:60px;"/>
+        </div>
+        <p>
+            <label></label>
+            <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)" />
+        </p>
+        <button class="btn btn-info btn-block login mt-2 mb-3" type="submit">Actualizar mis datos</button>
+      </form>
+    </div>
+  </div>
+</div>

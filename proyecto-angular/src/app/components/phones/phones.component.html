@@ -1,0 +1,18 @@
+<!-- Page Content -->
+<div class="container" [@fundido]>
+    <!-- Gallery -->
+<br><h2></h2><br>
+<div class="row">    
+ <div class="col-md-4 ml-auto" *ngFor="let phones of phones">
+    <img class="img-fluid img-thumbnail" src="{{ url +'get-image-phone/' +phones.image }}"
+    alt="{{phones.name}}" *ngIf="phones.image">
+
+    <img  src="http://via.placeholder.com/270x200" alt="{{phones.name}}"
+      *ngIf="!phones.image"> 
+       <h3><a class="nom" [routerLink]="['/phone', phones._id]">{{phones.name}}</a></h3>  
+  
+ </div>
+</div>
+
+<!-- Gallery -->
+
